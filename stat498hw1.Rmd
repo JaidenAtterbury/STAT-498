@@ -1,0 +1,137 @@
+---
+title: "Untitled"
+output: html_document
+date: "2023-01-25"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Problem 1:** $\\$
+(i) First Experiment: "41 Shades of Blue"
+
+(1) Overall Evalutation Criterion (OEC):
+The Overall Evalutation Criterion is known as a quantitative measure of an
+experiments main objective. In this experiment, the OEC was user engagement in
+the form of click through rate.
+
+(2) The Unit of Randomization:
+The unit of randomization is known as the subjects/units that will be randomly
+assigned to different treatments. In this experiment, the unit of randomization
+is the users of Google who are making searches.
+
+(3) The Relevant Treatments/Variants:
+In this experiment, the relevant treatments/variants are the 41 competing
+gradations of blue on Google search results pages.
+
+(4) Null and Alternative Hypotheses:
+In this experiment,
+
+The Null Hypothesis ($H_0$):
+Different shades of blue that the users experience on the search results page
+do not change click through rates.
+
+The Alternative Hypothesis ($H_1$):
+Different shades of blue that the users experience on the search results page
+do change click through rates.
+
+(5) Citation:
+Holson, Laura M. 2009. “Putting a Bolder Face on Google.” NY Times. February
+28. https://www.nytimes.com/2009/03/01/business/01marissa.html.
+
+(ii) Second Experiment: "Her Majesty’s Revenue and Customs Tax Experiment"
+
+(1) Overall Evalutation Criterion (OEC):
+In this experiment, the overall evaluation criterion was the amount of taxes
+paid back by an individual who has yet to pay their taxes.
+
+(2) The Unit of Randomization: 
+In this experiment, the units of randomization were the taxpayers who had
+already declared their income to be taxed, but who had not yet paid their tax
+liabilities.
+
+(3) The Relevant Treatments/Variants:
+In this experiment, the relevant treatments/variants were five randomized
+messages across around 100,000 individual taxpayers. These messages included
+three norm-based messages and two public services messages. While there existed
+a control group who received a standard letter with no persuasive message of
+this kind. 
+
+(4) Null and Alternative Hypotheses:
+In this experiment,
+
+The Null Hypothesis ($H_0$):
+Different message variants sent to tax payers has no impact on if/how much of
+their taxes an individual pays off.
+
+The Alternative Hypothesis ($H_1$):
+Different message variants sent to tax payers has an impact on if/how much of
+their taxes an individual pays off.
+
+(5) Citation:
+Michael Hallsworth, John A. List, Robert D. Metcalfe, and Ivo Vlaev,
+“The Behavioralist as Tax Collector: Using Natural Field Experiments to Enhance
+Tax Compliance,” Journal of Public Economics 148 (2017): 14–31.
+
+**Problem 2:** $\\$
+(i) Since the individual we are conncerned about is in the control and had a
+good outcome, we know that the potential outcome $Y(X_A) = 1$. However, due to
+the fundamental problem of causal inference, we can't derermine the value of
+the potential outcome $Y(X_B)$. Thus, $Y(X_B) = 0$ or $Y(X_B) = 1$. With that
+said we know our possible pairs of outcomes are the pairs
+$Y(X_A) = 1, Y(X_B) = 1$ and $Y(X_A) = 1, Y(X_B) = 0$ which correspond to the
+types AG and HU.
+
+(ii) Since the individual we are conncerned about is in the treatment group and
+had a bad outcome, we know that the potential outcome $Y(X_B) = 0$. However, due
+to the fundamental problem of causal inference, we can't derermine the value of
+the potential outcome $Y(X_A)$. Thus, $Y(X_A) = 0$ or $Y(X_A) = 1$. With that
+said we know our possible pairs of outcomes are the pairs
+$Y(X_A) = 0, Y(X_B) = 0$ and $Y(X_A) = 1, Y(X_B) = 0$ which correspond to the
+types NG and HU.
+
+(iii) 
+
+(a) Find $P(Y = 1)$ $\\$
+$P(Y = 1) = \frac{P(Y = 1, X = A) + P(Y = 1, X = B)}{4000} = \frac{840 + 1160}{4000} = \frac{1}{2}$.
+
+(b) Find $P(Y = 1 | X = B)$ $\\$
+$P(Y = 1 | X = B) = \frac{P(Y = 1, X = B)}{P(X=B)} =  \frac{1160}{2080} \frac{29}{52}$.
+
+(c) Find $P(Y(X_B) = 1 | X = B)$ $\\$
+By the Consistency Axiom we know that $P(Y(X_B) = 1 | X = B) = P(Y = 1 | X = B)$
+, thus we know that $P(Y(X_B) = 1 | X = B) = \frac{29}{52}$.
+
+(iv) As mentioned in the slides, $ACE(X \to Y)$ is the same as the percent recovery
+if everybody was treated versus if nobody was treated. Thus we can find the ACE
+as p(Helped)- p(Hurt) which in this case would be
+$ACE(X \to Y) = \frac{1160}{2080} - \frac{840}{1920} = \frac{25}{208}$.
+
+(v) Using the Frechet bounds as described in class we know that AG = $t$, where
+$t \in [max\{0, (c_0 + c_1) - 1\}, min\{c_0, c_1\}]$ and $c_0 = P(Y=1 | X=A)$
+and $c_1 = P(Y=1 | X=B)$, In our case $c_0 = \frac{P(Y=1,X=A)}{P(X=A)} = \frac{7}{16}$
+and $c_1 = \frac{P(Y=1,X=B)}{P(X=B)} = \frac{29}{52}$ as calculated in part
+(iii). Thus $t \in [0, \frac{7}{16}]$, it follows that $AG_{min} = 0$. The
+corresponding values for the other types are $HU = c_0 - 0 = \frac{7}{16}$,
+$HE = c_1 - 0 = \frac{29}{52}$, and $NG = 1 - c_1 - c_0 + 0 = \frac{1}{208}$.
+Thus the corresponding two way table is:
+
+\begin{center}
+\begin{tabular}{|c|c|c|} 
+\hline
+cell1 & cell2 & cell3 \\ 
+cell4 & cell5 & cell6 \\ 
+cell7 & cell8 & cell9 \\ 
+\hline
+\end{tabular}
+\end{center}
+
+
+
+
+
+
+
+
+
